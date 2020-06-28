@@ -159,6 +159,31 @@ public class PostDetailsActivity extends AppCompatActivity {
 
     }
 
+    private void addToHisNotifications (String hisUid, String pId, String notification){
+        String timestamp = "" + System.currentTimeMillis();
+
+        HashMap<Object, String> hashMap = new HashMap<>();
+        hashMap.put("pId", pId);
+        hashMap.put("timestamp",timestamp);
+        hashMap.put("pUid", hisUid);
+        hashMap.put("notification", notification);
+        hashMap.put("sUid", myUID);
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+        reference.child(hisUid).child("Notifications").child(timestamp).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                // added successfully
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                // failed
+            }
+        });
+
+    }
+
     private void loadComments() {
         // linear layout for recycler View
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
@@ -347,7 +372,7 @@ public class PostDetailsActivity extends AppCompatActivity {
                         likesRef.child(postId).child(myUID).setValue("Liked");
                         processLike = false;
 
-
+                        addToHisNotifications(""+hisUid,""+postId,"Liked your post");
 
                     }
                 }
@@ -393,6 +418,7 @@ public class PostDetailsActivity extends AppCompatActivity {
                 Toast.makeText(PostDetailsActivity.this, "Comment added...", Toast.LENGTH_SHORT).show();
                 commentEt.setText("");
                 updateCommentCount();
+                addToHisNotifications(""+ hisUid,""+postId,"Commented on your post");
 
             }
         }).addOnFailureListener(new OnFailureListener() {

@@ -41,6 +41,7 @@ import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -185,6 +186,8 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.MyHolder>{
                                 postsRef.child(postId).child("pLikes").setValue("" + (postLikes + 1));
                                 likesRef.child(postId).child(myUid).setValue("Liked");
                                 processLike = false;
+                                addToHisNotifications(""+ uid,""+pId,"Liked your post");
+
                             }
                         }
                     }
@@ -227,6 +230,32 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.MyHolder>{
                 context.startActivity(intent);
             }
         });
+    }
+
+    private void addToHisNotifications (String hisUid, String pId, String notification){
+        String timestamp = "" + System.currentTimeMillis();
+
+        HashMap<Object, String> hashMap = new HashMap<>();
+        hashMap.put("pId", pId);
+        hashMap.put("timestamp",timestamp);
+        hashMap.put("pUid", hisUid);
+        hashMap.put("notification", notification);
+        hashMap.put("sUid", myUid);
+
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+        reference.child(hisUid).child("Notifications").child(timestamp).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                // added successfully
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                // failed
+            }
+        });
+
     }
 
     private void setLikes(final MyHolder holder, final String keyPost) {

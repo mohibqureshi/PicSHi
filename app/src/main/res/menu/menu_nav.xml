@@ -13,4 +13,8 @@
         android:title="Users"
         android:icon="@drawable/ic_all_users_black" />
 
+    <item android:id="@+id/nav_notifications"
+        android:title="Notifications"
+        android:icon="@drawable/ic_notifications_black" />
+
 </menu>
