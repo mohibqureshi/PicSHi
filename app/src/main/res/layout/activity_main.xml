@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <!-- View to contain the logo   -->
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/picshi_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <!--  Register button    -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signup_btn_main"
+        android:text="Sign Up"
+        android:drawablePadding="20dp"
+        android:drawableLeft="@drawable/ic_register_icon"
+        android:minWidth="230dp"
+        android:layout_above="@+id/login_btn_main"
+        style="@style/Widget.AppCompat.Button.Colored"/>
+
+    <!--  Login button    -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_btn_main"
+        android:text="Login"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:drawableLeft="@drawable/ic_login_icon"
+        android:drawablePadding="20dp"
+        android:minWidth="230dp"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+</RelativeLayout>

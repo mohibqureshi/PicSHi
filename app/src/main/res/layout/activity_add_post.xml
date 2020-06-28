@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPostActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:orientation="vertical">
+
+        <!--  EditText for post title input      -->
+        <EditText
+            android:id="@+id/post_title_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_style"
+            android:singleLine="true"
+            android:padding="10dp"
+            android:hint="Enter Title"/>
+
+        <!--  ImageView for post Image      -->
+        <ImageView
+            android:id="@+id/post_image_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Click to add image"
+            android:src="@drawable/ic_add_image_post"
+            android:padding="0dp"
+            android:background="@color/colorPrimary"
+            android:minHeight="200dp"
+            />
+        
+        <!--  EditText for post description      -->
+        <EditText
+            android:id="@+id/post_description_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_style"
+            android:singleLine="true"
+            android:padding="10dp"
+            android:gravity="start"
+            android:inputType="textCapSentences|textMultiLine"
+            android:hint="Enter Description"
+            android:minHeight="120dp"/>
+        
+        <!--  Button to add post to firebase      -->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_upload_btn"
+            android:text="Upload"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="end"
+            android:background="@color/colorPrimary"
+            style = "@style/Widget.AppCompat.Button.Colored"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "460128252678",
+    "firebase_url": "https://picshi-57176.firebaseio.com",
+    "project_id": "picshi-57176",
+    "storage_bucket": "picshi-57176.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460128252678:android:29b64c4b8ee76dedeae487",
+        "android_client_info": {
+          "package_name": "com.example.picshi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460128252678-5ijfff7pot7d89h5i0igd72oig8kvkro.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.picshi",
+            "certificate_hash": "b48003dd5f902a5021e794bd955963c3e47ab199"
+          }
+        },
+        {
+          "client_id": "460128252678-19r66154nqmh126u2htd1o330plskl94.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUeOX-tR6dszSbTHXJVE60ZQT21bgKgN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460128252678-19r66154nqmh126u2htd1o330plskl94.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
